@@ -3,7 +3,7 @@
 // Declara una variable de tipo array, que almacenará los nombres de los amigos ingresados.
 let amigos = [];
 
-// Crea una función pata limpiar la caja de texto.
+// Crea una función para limpiar la caja de texto.
 function limpiarCaja() {
     let valorCaja = document.querySelector("#amigo");
     valorCaja.value = "";
@@ -52,7 +52,24 @@ function agregarAmigo() {
         // Cualquiera de los 2 métodos funciona, pero 'listaAmigosLi()' cumple con los requisitos del challenge.
         // listaAmigosCadena();
         listaAmigosLi();
-    
+    }
+}
+
+function sortearAmigo() {
+    numeroAmigos = amigos.length;
+    if (numeroAmigos === 0) {
+        alert("Por favor, inserte un nombre.");
+    } else {
+        document.getElementById("listaAmigos").innerHTML = "";
+        
+        amigoSecretoIndex = Math.floor(Math.random() * numeroAmigos);
+        console.log(amigoSecretoIndex);
+        console.log(amigos);
+        
+        amigoSecreto = amigos[amigoSecretoIndex];
+        
+        let resultado = document.getElementById("resultado");
+        resultado.innerHTML = amigoSecreto; 
     }
 }
 
